@@ -61,6 +61,30 @@ Route::middleware([SuperAdminRoleCheck::class])->group(function(){
         Route::get("active-user/{id}","Admin\UserController@active");
         Route::get("inactive-user/{id}","Admin\UserController@inactive");
 
+        //Interny
+        Route::get("add-internee","Admin\InternyController@create");
+        Route::post("save-internee","Admin\InternyController@store");
+        Route::get("view-internees","Admin\InternyController@index");
+        Route::get("edit-internee/{id}","Admin\InternyController@edit");
+        Route::post("update-internee/{id}","Admin\InternyController@update");
+        Route::get("delete-internee/{id}","Admin\InternyController@destroy");
+
+        //Attendance
+        Route::get("view-attendances","Admin\AttendanceController@index");
+        Route::get("delete-attendance/{id}","Admin\AttendanceController@destroy");
+        Route::get("edit-attendance/{id}","Admin\AttendanceController@edit");
+        Route::post("update-attendance/{id}","Admin\AttendanceController@update");
+
+        //Leave Request
+        Route::get("view-requests","Admin\LeaveRequestController@index");
+        Route::get("approve-request/{id}","Admin\LeaveRequestController@approved");
+        Route::get("cancel-request/{id}","Admin\LeaveRequestController@canceled");
+        Route::get("destroy-requests/{id}","Admin\LeaveRequestController@destroy");
+        
+
+
+
+
         //Language
         Route::get("add-language","Admin\LanguageController@create");
         Route::post("save-language","Admin\LanguageController@store");
@@ -127,6 +151,25 @@ Route::middleware([SuperAdminRoleCheck::class])->group(function(){
     // });
     
 });
+
+// User
+
+Route::get('user-dashboard', function () {
+    return view('User.Dashboard.dashboard');
+});
+
+Route::get('user-layout', function () {
+    return view('User.user_layout');
+});
+// Route::get('mark-attendance', function () {
+//     return view('User.Attendance.mark_attendance');
+// });
+
+Route::get("mark-attendance","User\AttendanceController@create");
+Route::post("mark-attendance","User\AttendanceController@store");
+
+
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -41,6 +41,24 @@
                     </li>
 
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{url('view-internees')}}">
+                            <i class="align-middle" data-feather="users"></i> <span class="align-middle">Internees</span>
+                         </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{url('view-attendances')}}">
+                            <i class="align-middle" data-feather="users"></i> <span class="align-middle">Atendances</span>
+                         </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{url('view-requests')}}">
+                            <i class="align-middle" data-feather="users"></i> <span class="align-middle">Leave Requests</span>
+                         </a>
+                    </li>
+
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="{{url('view-languages')}}">
                             <i class="align-middle" data-feather="hash"></i> <span class="align-middle">Languages</span>
                          </a>
